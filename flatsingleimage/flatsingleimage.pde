@@ -5,7 +5,8 @@ float largerDimension, smallerDimension;
 PImage pic;
 Boolean widthLarger = false;
 //
-fullScreen(); //size(600,300);
+size(600,300);
+//fullScreen(); //size(600,300);
 //populations
 int picWidth = 120;
 int picHeight = 120;
@@ -25,8 +26,8 @@ imageX = displayWidth*0;
 imageY = displayHeight*0;
 imageWidth = displayWidth*imageWidthRatio;
 imageHeight = displayHeight*imageHeightRatio;
-if (imageWidth >= displayWidth) println("ERROR: Image is too wide"); //display checker
-if (imageHeight >= displayHeight) println("ERROR: Image is too high");
+//if (imageWidth >= displayWidth) println("ERROR: Image is too wide"); //display checker
+//if (imageHeight >= displayHeight) println("ERROR: Image is too high");
 pic = loadImage("shacocs.png"); //dimensions width 120 height 120
 //
 //rect layout
