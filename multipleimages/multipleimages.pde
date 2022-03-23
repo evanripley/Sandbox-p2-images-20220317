@@ -25,29 +25,6 @@ textAlign(CENTER, CENTER); //align x and y see processing.org / reference
 textFont(titleFont, 77); //change number till it fits
 text(title, titleX, titleY, titleWidth, titleHeight);
 fill(resetDefaultInk);
-//text 2
-String title2 = "when the";
-float titleX2, titleY2, titleWidth2, titleHeight2;
-PFont titleFont2;
-color red2=#F23B3B, resetDefaultInk2=#FFFFFF;
-//
-//populations
-titleX2 = displayWidth*1/5;
-titleY2 = displayHeight*1/3;
-titleWidth2 = displayWidth*3/5;
-titleHeight2 = displayHeight*1/10;
-//
-titleFont2 = createFont ("Comic Sans MS", 55);
-//
-rect(titleX2, titleY2, titleWidth2, titleHeight2);
-//drawing text
-fill(red2);
-textAlign(CENTER, CENTER);
-//values: [ LEFT | CENTER | RIGHT ] and [ TOP | CENTER | BOTTOM | BASELINE ]
-textFont(titleFont2, 77);
-text(title2, titleX2, titleY2, titleWidth2, titleHeight2);
-fill(resetDefaultInk2);
-//end
 //
 //variables
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
@@ -102,6 +79,27 @@ if (heightPic2Larger = true) imageWidthRatioPic2 = float (smallerPic2Dimension) 
 if (heightPic2Larger = true) imageHeightRatioPic2 = float (largerPic2Dimension) / float (largerPic2Dimension);
 println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //verify variable details
 //
+// Use ratios to change the image width and height properties of Rectangle
+// **See below to Specific Image Properties of Image and Rectangle Variables
+//
+rectXPic1 = width*1/16;
+rectYPic1 = height*0;
+rectWidthPic1 = width*1/2;
+rectHeightPic1 = height*1/2;
+rectXPic2 = width*1/8;
+rectYPic2 = height*1/2;
+rectWidthPic2 = width*6/8;
+rectHeightPic2 = height*1/2;
+//
+// Final Aspect Ratio Calculations
+float picWidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
+picWidthAdjusted = rectWidthPic1*imageWidthRatioPic1;
+pic1HeightAdjusted = rectHeightPic1*imageHeightRatioPic1;
+pic2WidthAdjusted = rectWidthPic2*imageWidthRatioPic2;
+pic2HeightAdjusted = rectHeightPic2*imageHeightRatioPic2;
+println (pic1Width, pic1Height, pic2Width, pic2Height);
+println (picWidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted);
+//
 //
 //
 rectXPic1 = displayWidth*1/4;
@@ -116,5 +114,6 @@ rectHeightPic2 = displayHeight*1/3;
 //rect layout and image printing on canvas
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //image 1 landscape
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //image 2 landscape
+// image using rect() variables
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
-image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/5), rectWidthPic2, rectHeightPic2);
